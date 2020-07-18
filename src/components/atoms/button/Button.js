@@ -1,14 +1,14 @@
 import react from 'react';
 import PropTypes from 'prop-types';
-import { Button } from './button.style';
+import { ButtonComponent } from './button.style';
 
 const Button = ({
   onClick,
   children,
 }) => (
-  <Button onClick={onClick}>
-    {children}
-  </Button>
+  <ButtonComponent onClick={onClick}>
+    <marquee>{children}</marquee>
+  </ButtonComponent>
 );
 
 Button.propTypes = {

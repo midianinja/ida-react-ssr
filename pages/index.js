@@ -3,13 +3,26 @@ import Link from 'next/link'
 import faker from 'faker'
 import { gql } from 'apollo-boost';
 import styled from 'styled-components';
-import { Button } from '../src/components/atoms/button/button.style';
+import Button from '../src/components/atoms/button/Button';
 import { client } from '../src/services/apollo';
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://www.petz.com.br/blog/wp-content/uploads/2016/10/gatinho-feliz-2.jpg");
   background-color: ${(props) => props.color};
+`;
+
+const UserContainer = styled.marquee`
+  width: 400px;
+  display: block;
+  background-color: #f1f1f1;
+  background: rgb(244,250,2);
+  color: white;
+  background: linear-gradient(0deg, rgba(244,250,2,1) 0%, rgba(13,113,3,1) 35%, rgba(255,0,0,1) 100%);
 `;
 
 const Label = styled.label`
@@ -51,11 +64,11 @@ const Index = ({ name }) => {
       </div>
       {
         users.map((usr) => (
-          <div>
+          <UserContainer key={usr.id}>
             <label>{usr.name}</label>
             <Label>{usr.last_name}</Label>
             <p>{usr.id}</p>
-          </div>
+          </UserContainer>
         ))
       }
     </Container>
