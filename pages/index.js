@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link'
 import faker from 'faker'
 import { gql } from 'apollo-boost';
 import styled from 'styled-components';
 import Button from '../src/components/atoms/button/Button';
 import { client } from '../src/services/apollo';
+import BaseHead from '../src/components/BaseHead';
 
 const Container = styled.div`
   width: 100vw;
@@ -13,7 +14,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-image: url("https://www.petz.com.br/blog/wp-content/uploads/2016/10/gatinho-feliz-2.jpg");
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.color ? 'blue' : 'gray'};
 `;
 
 const UserContainer = styled.marquee`
@@ -51,16 +52,25 @@ const fetchUsers = async (setUsers) => {
 const Index = ({ name }) => {
   const [variavel, setVarivel] = useState(false);
   const [users, setUsers] = useState([]);
+  useEffect(() => {
+    console.log('Manda pro banco de dados que essa pagina abriu');
+  }, [])
 
   return (
-    <Container onClick={() => fetchUsers(setUsers)}>
+    <Container color="" >
+      <BaseHead
+        keywords={[/* Palavras chave para o google */]}
+        imageUrl={''/* Imagem para preview do link */}
+        title={'IDA'/* titulo da pagina */}
+        description={'IDA'/* Descrição da pagina */}
+      />
       <h1>Home Page</h1>
       <p>Welcome, {name}</p>
       <div>
         <Link href="/about">
           <a>{variavel}</a>
         </Link>
-        <Button onClick={() => setVarivel(!variavel)}>Texto</Button>
+        <Button onClick={() => fetchUsers(setUsers)}>Buscar usuários</Button>
       </div>
       {
         users.map((usr) => (
@@ -78,7 +88,6 @@ const Index = ({ name }) => {
 export default Index
 
 export async function getStaticProps() {
-  // The name will be generated at build time only
   const name = faker.name.findName()
 
   return {

@@ -6,6 +6,5 @@ export const ButtonComponent = styled.button`
   border-radius: 100%;
   box-shadow: 1px 1px 100px 10px red;
   padding: 100px 50px;
-  background-color: green;
-  color: white;
+  color: ${props => props.yellow ? 'yellow' : '#000'};
 `;
