@@ -1,25 +1,22 @@
-import BaseHead from '../src/components/BaseHead';
-// Contexto para trabalhar com temas
-import { ThemeProvider } from 'styled-components';
-
-import theme from '../src/components/theme'
-import Body from '../src/components/template/body/Body';
+import Body from "../src/components/template/body/Body"
+import Modal from "../src/components/organisms/modal/Modal"
+import Title from "../src/components/atoms/title/Title"
+import Flex from "../src/components/molecules/flex/Flex"
+import Logo from "../src/components/atoms/logo/Logo"
 
 export default (props) => {
   return (
-    <>
-      {/* Header padrão do html gerado */}
-      <BaseHead
-        keywords={[/* Palavras chave para o google */]}
-        imageUrl={''/* Imagem para preview do link */}
-        title={'IDA'/* titulo da pagina */}
-        description={'IDA'/* Descrição da pagina */}
-      />
-      {/* Provedor das propriedades de tema */}
-      <ThemeProvider theme={theme}>
-        {/* Componente raiz para o desenvolvimento */}
-        <Body />
-      </ThemeProvider>
-    </>
+    <Body>
+      <Modal header={<Logo scale={0.7}/>}>
+        <Flex column>
+          <Flex>
+            <Title>Faça seu login!</Title>
+          </Flex>
+          <Flex>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </Flex>
+        </Flex>
+      </Modal>
+    </Body>
   )
 }

@@ -13,6 +13,8 @@ th, td, tr, aside, caption, sup, sub, q, small {
 	padding: 0;
 	margin: 0;
 	border: 0;
+
+	transition: all 0.2s ease; /* Remover se ficar ruim */
 }
 
 a {
@@ -25,9 +27,9 @@ input:focus, select:focus, textarea:focus{
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	line-height: 1em;
+	box-sizing: border-box;
 }
 
 .__scroll-blocked {

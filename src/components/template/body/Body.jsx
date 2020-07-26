@@ -1,14 +1,27 @@
-import Body from "./body.style";
-import Modal from "../../organisms/modal/Modal";
-import Title from "../../atoms/title/Title";
+// Contexto para trabalhar com temas
+import { ThemeProvider } from 'styled-components';
 
-export default () => {
+import BodyContainer from "./body.style";
+import BaseHead from '../../BaseHead';
+import theme from '../../theme';
+
+export default ({children}) => {
   return (
-    <Body>
-      <Modal>
-        <Title type="title1">Titulo do modal</Title>
-        {/* <Content>Conteudo do modal</Content> */}
-      </Modal>
-    </Body>
+    <>
+      {/* Header padrão do html gerado */}
+      <BaseHead
+        keywords={[/* Palavras chave para o google */]}
+        imageUrl={''/* Imagem para preview do link */}
+        title={'IDA'/* titulo da pagina */}
+        description={'IDA'/* Descrição da pagina */}
+      />
+      {/* Provedor das propriedades de tema */}
+      <ThemeProvider theme={theme}>
+        {/* Componente raiz para o desenvolvimento */}
+        <BodyContainer>
+          {children}
+        </BodyContainer>
+      </ThemeProvider>
+    </>
   )
 }

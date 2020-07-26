@@ -1,15 +1,23 @@
 import { Overlay, ModalBox, ModalContainer, ModalHeader, ModalTitle, ModalExit } from "./modal.style.js";
 import Button from "../../atoms/button/Button.jsx";
+import Flex from "../../molecules/flex/Flex.jsx";
+import Icon from "../../atoms/icon/Icon.jsx";
 
-export default ({ title, children }) => {
+export default ({ header, children }) => {
   return (
     <Overlay>
       <ModalBox>
         <ModalContainer>
           <ModalHeader>
-            <ModalTitle>{title}</ModalTitle>
+            <ModalTitle>
+              <Flex>
+                {header}
+              </Flex>
+            </ModalTitle>
             <ModalExit>
-              {/* <Button type="transparent" onClick={() => true}>X</Button> */}
+              <Flex>
+                <Icon name="close" />
+              </Flex>
             </ModalExit>
           </ModalHeader>
           {children}

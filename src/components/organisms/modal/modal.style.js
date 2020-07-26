@@ -6,23 +6,32 @@ export const Overlay = styled.div`
   align-items: center;
   height: 100vh;
   width:  100vw;
-  background-color: ${({theme}) => theme.dark.modal.overlay.bgColor};
+  background-color: ${({theme}) => theme.modal.overlaybgColor};
 `;
 
 export const ModalBox = styled.div`
-  width: 302px;
-  height:  513px;
-  background-color: ${({theme}) => theme.dark.colors.defaultBg};
-  border-radius: ${({theme}) => theme.defaultBox.borderRadius};
-  background: rgb(29,29,29);
-  background: linear-gradient(0deg, rgba(29,29,29,1) 60%, rgba(48,48,48,1) 100%);
-  color: ${({theme}) => theme.dark.colors.secondary};
+  background-color: ${({theme}) => theme.colors.defaultBg};
+  border-radius: ${({theme}) => theme.default.borderRadius}px;
+  background: ${({theme: { modal }}) => modal.gradientColors.bottom()};
+  background: linear-gradient(0deg, ${({theme}) => theme.modal.gradientColors.bottom} 60%, ${({theme}) => theme.modal.gradientColors.top} 100%);
+  color: ${({theme}) => theme.colors.secondary};
+
+  /* Media */
+  @media only screen and (max-width: ${({theme}) => theme.media.desktop[0]}px) {
+    width: ${({theme}) => theme.modal.sizes.mobile[0].width}px;
+    height:  ${({theme}) => theme.modal.sizes.mobile[0].bigHeight}px;
+  }
+  @media only screen and (min-width: ${({theme}) => theme.media.desktop[0]+1}px) {
+    width: ${({theme}) => theme.modal.sizes.desktop[0].width}px;
+    height:  ${({theme}) => theme.modal.sizes.desktop[0].bigHeight}px;
+  }
 `;
 
 export const ModalContainer = styled.div`
   width: inherit;
   height: inherit;
-  background-image: url('/assets/idaLogo.svg');
+  padding: ${({theme}) => theme.modal.padding}px;
+  background-image: url(${({theme}) => theme.default.logo.mono});
   background-repeat: no-repeat;
   background-position-x: 10px;
   background-position-y: -86px;
@@ -33,7 +42,9 @@ export const ModalHeader = styled.div`
 `;
 
 export const ModalTitle = styled.div`
-  width: 100%;
+  width: calc(100% - 37px);
 `;
 
-export const ModalExit = styled.div``;
+export const ModalExit = styled.div`
+  width: 37px;
+`;

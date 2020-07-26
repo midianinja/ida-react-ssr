@@ -1,8 +1,8 @@
 import { TitleComponent } from "./title.style"
 
-export default ({ type, children }) => {
+export default ({ size = "h1", children }) => {
   return (
-    <TitleComponent type={type}>
+    <TitleComponent size={size}>
       {children}
     </TitleComponent>
   )

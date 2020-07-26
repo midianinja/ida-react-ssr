@@ -13,6 +13,7 @@ const Button = ({
 
 Button.propTypes = {
   type: PropTypes.oneOf([
+    "none",
     "defaultBg",
     "primary",
     "secondary",
@@ -20,7 +21,7 @@ Button.propTypes = {
     "error",
     "success"
   ]),
-  // onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
 
