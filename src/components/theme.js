@@ -5,8 +5,12 @@ const theme = {
   },
   default:{
     fontFamily: ["Roboto", "Arial", "Helvetica", "sans-serif"],
-    borderRadius: 10,
-    spacing: 8,
+    borderRadius: 10, 
+    spacing: {
+      units: 0.5,
+      metric: 'rem',
+      value: ()=>`${theme.default.spacing.units}${theme.default.spacing.metric}`
+    },
     logo: {
       mono: "/assets/logo/idaLogoMono.svg",
       color: {
@@ -54,7 +58,7 @@ const theme = {
       top: "rgba(48,48,48,1)",
       bottom: () => `${theme.colors.defaultBg}`
     },
-    padding: () => theme.default.spacing*3,
+    padding: () => theme.default.spacing.value()*3,
     sizes: {
       mobile:[
         {
