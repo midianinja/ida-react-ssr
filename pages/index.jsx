@@ -3,6 +3,7 @@ import Modal from "../src/components/organisms/modal/Modal"
 import Title from "../src/components/atoms/title/Title"
 import Flex from "../src/components/molecules/flex/Flex"
 import Logo from "../src/components/atoms/logo/Logo"
+import ButtonSecondary from "../src/components/atoms/button/secondary/ButtonSecondary"
 
 export default (props) => {
   return (
@@ -13,7 +14,10 @@ export default (props) => {
             <Title>Faça seu login!</Title>
           </Flex>
           <Flex>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <ButtonSecondary onClick={()=>true}>TESTE</ButtonSecondary>
+          </Flex>
+          <Flex>
+            <ButtonSecondary onClick={()=>true}>TESTE</ButtonSecondary>
           </Flex>
         </Flex>
       </Modal>
