@@ -1,10 +1,14 @@
 const theme = {
   media: {
     mobile: [320, 360],
-    desktop: [1024]
+    desktop: [1024],
   },
-  default:{
-    fontFamily: ["Roboto", "Arial", "Helvetica", "sans-serif"],
+  fonts: {
+    body: "Roboto, Arial, Helvetica, sans-serif",
+    title: "Darker Grotesque",
+    monospace: "Menlo, monospace",
+  },
+  default: {
     borderRadius: 10,
     spacing: 8,
     logo: {
@@ -12,51 +16,60 @@ const theme = {
       color: {
         url: "/assets/logo/idaLogoColor.svg",
         width: 184,
-        height: 65
-      }
-    }
+        height: 65,
+      },
+    },
   },
   colors: {
     none: "transparent",
-    defaultBg: "#1d1d1d",
+    defaultBg: "#1D1D1D",
     primary: "#6523CF",
     secondary: "#FFF",
     inactive: "#AAA",
     error: "#FF2626",
-    success: "#48F3A7"
+    success: "#48F3A7",
   },
-  buttons:{
-    padding: "10px 28px"
+  buttons: {
+    fontSize: {
+      default: "16px",
+      link: "12px",
+    },
+    padding: {
+      default: "12px 24px",
+      link: "16px 24px",
+    },
+    primary: {
+      background: () => theme.colors.primary,
+    },
   },
-  texts:{
-    title:{
+  texts: {
+    title: {
       fontWeight: "bold",
-      fontFamily: ["Darker Grotesque", "Arial", "Helvetica", "sans-serif"],
-      sizes:{
+      sizes: {
         h1: 32,
         h2: 24,
         h3: 18,
-      }
+      },
     },
-    body:{
+    body: {
       fontWeight: "normal",
-      sizes:{
+      sizes: {
         h1: 18,
         h2: 16,
         h3: 14,
         h4: 12,
-      }
+      },
     },
   },
   modal: {
     overlaybgColor: "rgba(0,0,0,.7)",
-    gradientColors:{
+    gradientColors: {
       top: "rgba(48,48,48,1)",
-      bottom: () => `${theme.colors.defaultBg}`
+      bottom: () => `${theme.colors.defaultBg}`,
     },
-    padding: () => theme.default.spacing*3,
+    padding: () => theme.default.spacing * 3,
     sizes: {
-      mobile:[
+      mobile: [
         {
           width: 255,
           smallHeight: 305,
@@ -66,16 +79,16 @@ const theme = {
           width: 302,
           smallHeight: 315,
           bigHeight: 513,
-        }
+        },
       ],
-      desktop:[
+      desktop: [
         {
           width: 400,
           smallHeight: 400,
           bigHeight: 560,
-        }
+        },
       ],
-    }
+    },
   },
 };
 
