@@ -13,11 +13,11 @@ export const ModalBox = styled.div`
   width: 80vw;
   height: 80vh;
   /* Tamanho provisório */
-  background-color: ${({theme}) => theme.colors.defaultBg};
+  background-color: ${({theme}) => theme.colors.bgPrimary};
   border-radius: ${({theme}) => theme.default.borderRadius}px;
-  background: ${({theme: { modal }}) => modal.gradientColors.bottom()};
-  background: linear-gradient(0deg, ${({theme}) => theme.modal.gradientColors.bottom} 60%, ${({theme}) => theme.modal.gradientColors.top} 100%);
-  color: ${({theme}) => theme.colors.secondary};
+  background: ${({theme}) => theme.colors.bgPrimary};
+  background: linear-gradient(0deg, ${({theme}) => theme.colors.bgPrimary} 60%, ${({theme}) => theme.modal.gradientColorsTop} 100%);
+  color: ${({theme}) => theme.colors.secondaryNormal};
 `;
 
 export const ModalContainer = styled.div`
