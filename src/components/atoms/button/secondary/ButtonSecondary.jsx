@@ -4,9 +4,10 @@ import { ButtonSecondaryComponent } from './buttonSecondary.style';
 const ButtonSecondary = ({
   type,
   onClick,
+  disable = false,
   children,
 }) => (
-  <ButtonSecondaryComponent onClick={onClick} type={type}>
+  <ButtonSecondaryComponent onClick={(event)=>!disable && onClick(event)} type={type}>
     {children}
   </ButtonSecondaryComponent>
 );

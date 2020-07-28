@@ -5,8 +5,8 @@ import Icon from "../../atoms/icon/Icon.jsx";
 export default ({ header, children }) => {
   return (
     <Overlay>
-    <ModalBox>
-      <ModalContainer>
+      <ModalBox>
+        <ModalContainer>
           <ModalHeader>
             <ModalTitle>
               <Flex>

@@ -7,5 +7,5 @@ export const ButtonComponent = styled.button`
   */
   border-radius: ${({theme}) => theme.default.borderRadius};
   padding: ${({theme}) => theme.buttons.padding};
-  color: ${({theme}) => theme.colors.secondary};
+  color: ${({theme}) => theme.colors.secondaryNormal};
 `;
