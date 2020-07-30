@@ -10,21 +10,14 @@ export const Overlay = styled.div`
 `;
 
 export const ModalBox = styled.div`
-  background-color: ${({theme}) => theme.colors.defaultBg};
+  width: 80vw;
+  height: 80vh;
+  /* Tamanho provisório */
+  background-color: ${({theme}) => theme.colors.bgPrimary};
   border-radius: ${({theme}) => theme.default.borderRadius}px;
-  background: ${({theme: { modal }}) => modal.gradientColors.bottom()};
-  background: linear-gradient(0deg, ${({theme}) => theme.modal.gradientColors.bottom} 60%, ${({theme}) => theme.modal.gradientColors.top} 100%);
-  color: ${({theme}) => theme.colors.secondary};
-
-  /* Media */
-  @media only screen and (max-width: ${({theme}) => theme.media.desktop[0]}px) {
-    width: ${({theme}) => theme.modal.sizes.mobile[0].width}px;
-    height:  ${({theme}) => theme.modal.sizes.mobile[0].bigHeight}px;
-  }
-  @media only screen and (min-width: ${({theme}) => theme.media.desktop[0]+1}px) {
-    width: ${({theme}) => theme.modal.sizes.desktop[0].width}px;
-    height:  ${({theme}) => theme.modal.sizes.desktop[0].bigHeight}px;
-  }
+  background: ${({theme}) => theme.colors.bgPrimary};
+  background: linear-gradient(0deg, ${({theme}) => theme.colors.bgPrimary} 60%, ${({theme}) => theme.modal.gradientColorsTop} 100%);
+  color: ${({theme}) => theme.colors.secondaryNormal};
 `;
 
 export const ModalContainer = styled.div`
