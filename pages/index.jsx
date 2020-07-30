@@ -10,7 +10,11 @@ import ButtonTertiary from '../src/components/atoms/button/tertiary/ButtonTertia
 
 export default () => (
   <Body>
-    <Modal header={<Logo scale={0.7} />}>
+    <Modal
+      header={(
+        <Logo width={184} height={65} scale={0.7} logo="ida/ida_color" altText="Logotipo da IDA" />
+      )}
+    >
       <Flex flex={0}>
         <Flex>
           <Flex column>
