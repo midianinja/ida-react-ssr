@@ -1,5 +1,4 @@
 import { Overlay, ModalBox, ModalContainer, ModalHeader, ModalTitle, ModalExit } from "./modal.style.js";
-import Button from "../../atoms/button/Button.jsx";
 import Flex from "../../molecules/flex/Flex.jsx";
 import Icon from "../../atoms/icon/Icon.jsx";
 

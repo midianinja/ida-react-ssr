@@ -6,13 +6,19 @@ const theme = {
   default: {
     fontFamily: ['Roboto', 'Arial', 'Helvetica', 'sans-serif'],
     borderRadius: 10,
-    spacing: 8,
+    spacing: {
+      units: 0.5,
+      metric: 'rem',
+      value: () => `${theme.default.spacing.units}${theme.default.spacing.metric}`,
+    },
   },
   colors: {
     none: 'transparent',
-    defaultBg: '#1d1d1d',
+    bgPrimary: '#1d1d1d',
+    bgSecondary: '#FFF',
     primary: '#6523CF',
-    secondary: '#FFF',
+    secondaryNormal: '#FFF',
+    secondaryInverted: '#000',
     inactive: '#AAA',
     error: '#FF2626',
     success: '#48F3A7',
@@ -32,6 +38,7 @@ const theme = {
     },
     body: {
       fontWeight: 'normal',
+      fontFamily: ['Roboto', 'Arial', 'Helvetica', 'sans-serif'],
       sizes: {
         h1: 18,
         h2: 16,
@@ -42,11 +49,8 @@ const theme = {
   },
   modal: {
     overlaybgColor: 'rgba(0,0,0,.7)',
-    gradientColors: {
-      top: 'rgba(48,48,48,1)',
-      bottom: () => `${theme.colors.defaultBg}`,
-    },
-    padding: () => theme.default.spacing * 3,
+    gradientColorsTop: 'rgba(48,48,48,1)',
+    padding: 16,
     sizes: {
       mobile: [
         {

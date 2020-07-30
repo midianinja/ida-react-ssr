@@ -1,8 +1,8 @@
 import { FlexComponent } from "./flex.style"
 
-export default ({ column = false, size = "h1", children, ...rest }) => {
+export default ({ column = false, flex=1, size = "h1", children, ...rest }) => {
   return (
-    <FlexComponent column={column} {...rest}>
+    <FlexComponent column={column} flex={1} {...rest}>
       {children}
     </FlexComponent>
   )

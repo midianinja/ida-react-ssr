@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
-import { ButtonComponent } from './button.style';
-import { BodyTextComponent } from '../bodyText/bodyText.style';
+import { ButtonSecondaryComponent } from './buttonSecondary.style';
 
-const Button = ({
+const ButtonSecondary = ({
   type,
   onClick,
   disable = false,
   children,
 }) => (
-  <ButtonComponent onClick={(event)=>!disable && onClick(event)} type={type}>
+  <ButtonSecondaryComponent onClick={(event)=>!disable && onClick(event)} type={type}>
     {children}
-  </ButtonComponent>
+  </ButtonSecondaryComponent>
 );
 
-Button.propTypes = {
+ButtonSecondary.propTypes = {
   type: PropTypes.oneOf([
     "none",
     "defaultBg",
@@ -27,4 +26,4 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Button;
+export default ButtonSecondary;
