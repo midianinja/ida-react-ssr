@@ -4,13 +4,17 @@ const theme = {
     desktop: [1024],
   },
   fonts: {
-    body: "Roboto, Arial, Helvetica, sans-serif",
+    body: "Roboto, Helvetica, sans-serif",
     title: "Darker Grotesque",
     monospace: "Menlo, monospace",
   },
-  default: {
-    borderRadius: 10,
-    spacing: 8,
+  default:{
+    borderRadius: '10px',
+    spacing: {
+      units: 0.5,
+      metric: 'rem',
+      value: ()=>`${theme.default.spacing.units}${theme.default.spacing.metric}`
+    },
     logo: {
       mono: "/assets/logo/idaLogoMono.svg",
       color: {
@@ -22,25 +26,13 @@ const theme = {
   },
   colors: {
     none: "transparent",
-    defaultBg: "#1D1D1D",
+    background: "#1D1D1D",
+    accent: "#1D1D1D",
     primary: "#6523CF",
     secondary: "#FFF",
-    inactive: "#AAA",
+    muted: "#AAA",
     error: "#FF2626",
     success: "#48F3A7",
-  },
-  buttons: {
-    fontSize: {
-      default: "16px",
-      link: "12px",
-    },
-    padding: {
-      default: "12px 24px",
-      link: "16px 24px",
-    },
-    primary: {
-      background: () => theme.colors.primary,
-    },
   },
   texts: {
     title: {
@@ -53,7 +45,8 @@ const theme = {
     },
     body: {
       fontWeight: "normal",
-      sizes: {
+      fontFamily: ["Roboto", "Arial", "Helvetica", "sans-serif"],
+      sizes:{
         h1: 18,
         h2: 16,
         h3: 14,
@@ -63,11 +56,8 @@ const theme = {
   },
   modal: {
     overlaybgColor: "rgba(0,0,0,.7)",
-    gradientColors: {
-      top: "rgba(48,48,48,1)",
-      bottom: () => `${theme.colors.defaultBg}`,
-    },
-    padding: () => theme.default.spacing * 3,
+    gradientColorsTop: "rgba(48,48,48,1)",
+    padding: 16,
     sizes: {
       mobile: [
         {
@@ -90,6 +80,6 @@ const theme = {
       ],
     },
   },
-};
+}
 
 export default theme;
