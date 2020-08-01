@@ -15,7 +15,7 @@ export default (props) => {
           </Flex>
           <Flex>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <Switch></Switch>
+            <Switch handleChange={(e) => console.log(e)} ></Switch>
           </Flex>
         </Flex>
       </Modal>

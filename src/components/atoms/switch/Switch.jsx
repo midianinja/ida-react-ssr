@@ -1,13 +1,22 @@
 import { useState } from "react";
-import { Label, Option } from "./switch.style";
+import { Label, OptionEmail, OptionCel} from "./switch.style";
+import PropTypes from 'prop-types';
 
-const Switch = (props) => {
+
+const Switch = ({ handleChange }) => {
+  const [ active, setActive ] = useState('email') 
+
   return (
     <Label>
-      <Option >E-mail</Option>
-      <Option>Celular</Option>
+      <OptionEmail onClick={() => { handleChange('email'); setActive('email') }} active={active === 'email'} >E-mail</OptionEmail>
+      <OptionCel onClick={() => { handleChange('cel'); setActive('cel') }} active={active === 'cel'} >Celular</OptionCel>
     </Label>
   );
 };
+
+Switch.propTypes = {
+  handleChange: PropTypes.func.isRequired
+}
+
 
 export default Switch;
