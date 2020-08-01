@@ -13,8 +13,6 @@ th, td, tr, aside, caption, sup, sub, q, small {
 	padding: 0;
 	margin: 0;
 	border: 0;
-
-	transition: all 0.2s ease; /* Remover se ficar ruim */
 }
 
 a {
