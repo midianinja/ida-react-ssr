@@ -18,23 +18,27 @@ const Index = (props) => {
           <Flex>
             <Flex column>
               <Flex>
-                <Title size="h1">Título 1</Title>
+                <ButtonSecondary onClick={() => true} type="inactive">Texto</ButtonSecondary>
               </Flex>
               <Flex>
-                <Title size="h2">Título 2</Title>
+                <ButtonSecondary onClick={() => true}>Texto</ButtonSecondary>
               </Flex>
               <Flex>
-                <Title size="h3">Título 2</Title>
+                <ButtonSecondary onClick={() => true} type="secondaryNormal">Texto</ButtonSecondary>
+              </Flex>
+            </Flex>
+            <Flex flex={0}>
+              <Flex>
+                <ButtonTertiary onClick={() => true} type="inactive">Texto</ButtonTertiary>
               </Flex>
               <Flex>
-                <BodyTextComponent size="h1">Texto de corpo Desktop</BodyTextComponent>
+                <ButtonTertiary onClick={() => true}>Texto</ButtonTertiary>
               </Flex>
               <Flex>
-                <BodyTextComponent size="h2">Texto de corpo Desktop</BodyTextComponent>
+                <ButtonTertiary onClick={() => true} type="secondaryNormal">Texto</ButtonTertiary>
               </Flex>
-              <Flex>
-                <BodyTextComponent size="h3">Texto de corpo Desktop</BodyTextComponent>
-              </Flex>
+            </Flex>
+            <Flex flex={0} style={{ backgroundColor: '#FFF' }}>
               <Flex>
                 <BodyTextComponent size="h4">Texto de corpo Mobile</BodyTextComponent>
               </Flex>

@@ -13,7 +13,7 @@ const theme = {
     spacing: {
       units: 0.5,
       metric: 'rem',
-      value: ()=>`${theme.default.spacing.units}${theme.default.spacing.metric}`
+      value: () => `${theme.default.spacing.units}${theme.default.spacing.metric}`,
     },
     logo: {
       mono: "/assets/logo/idaLogoMono.svg",
@@ -55,8 +55,8 @@ const theme = {
     },
   },
   modal: {
-    overlaybgColor: "rgba(0,0,0,.7)",
-    gradientColorsTop: "rgba(48,48,48,1)",
+    overlaybgColor: 'rgba(0,0,0,.7)',
+    gradientColorsTop: 'rgba(48,48,48,1)',
     padding: 16,
     sizes: {
       mobile: [
