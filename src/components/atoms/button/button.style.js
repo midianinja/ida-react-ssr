@@ -1,43 +1,74 @@
 import styled, { css } from "styled-components";
 
 const BaseButton = styled.button`
+  border-radius: ${({ theme }) => theme.default.borderRadius};
+  color: ${({ theme, variant }) => theme.colors[variant]};
   font-weight: 600;
   font-size: 16px;
   padding: 12px 24px;
-  border-radius: ${({ theme }) => theme.default.borderRadius};
   min-width: 88px;
-  color: ${({ theme, variant }) => theme.colors[variant]};
   cursor: pointer;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      cursor: not-allowed;
+    `}
 `;
 
 export const StyledPrimaryButton = styled(BaseButton)`
   background-color: ${({ theme, variant }) => theme.colors[variant]};
 
-  ${props => props.variant === 'primary' && css`
-    color: ${({ theme }) => theme.colors.secondary};
-  `}
+  ${({ variant }) =>
+    variant === "primary" &&
+    css`
+      color: ${({ theme }) => theme.colors.secondary};
+    `}
 
-  ${props => props.variant === 'secondary' && css`
-    color: ${({ theme }) => theme.colors.accent};
+  ${({ variant }) =>
+    variant === "secondary" &&
+    css`
+      color: ${({ theme }) => theme.colors.accent};
+    `}
 
-  `}
+  ${({ variant }) =>
+    variant === "accent" &&
+    css`
+      color: ${({ theme }) => theme.colors.secondary};
+    `}
 
-  ${props => props.variant === 'accent' && css`
-    color: ${({ theme }) => theme.colors.secondary};
-  `}
-`
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.secondary};
+      background-color: ${({ theme }) => theme.colors.muted};
+    `}
+`;
 
 export const StyledSecondaryButton = styled(BaseButton)`
   border: 2px solid;
   background: transparent;
-`
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.muted};
+      border-color: ${({ theme }) => theme.colors.muted};
+    `}
+`;
 
 export const StyledTertiaryButton = styled(BaseButton)`
   background: none;
   text-decoration: underline;
   font-size: 12px;
   padding: 16px 24px;
-`
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.muted};
+    `}
+`;
 
 export const StyledNavigationButton = styled(BaseButton)`
   background: none;
@@ -46,4 +77,9 @@ export const StyledNavigationButton = styled(BaseButton)`
   display: flex;
   align-items: center;
 
-`
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.muted};
+    `}
+`;
