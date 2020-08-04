@@ -1,4 +1,3 @@
-import { useTheme } from "styled-components";
 import PropTypes from "prop-types";
 
 import { ArrowLeftIcon } from "../icon";
@@ -26,12 +25,11 @@ const handleLinkWrapping = (Component, props) => {
     ...rest,
   };
 
-  const button =
-    typeof Component === "object" ? (
-      React.cloneElement(Component, { ...buttonsProps })
-    ) : (
-      <Component {...buttonsProps} />
-    );
+  const button = React.isValidElement(Component) ? (
+    React.cloneElement(Component, { ...buttonsProps })
+  ) : (
+    <Component {...buttonsProps} />
+  );
 
   if (href)
     return (
@@ -47,21 +45,20 @@ const handleLinkWrapping = (Component, props) => {
   return button;
 };
 
-const PrimaryButton = (props) =>
-  handleLinkWrapping(<StyledPrimaryButton />, props);
+const PrimaryButton = (props) => handleLinkWrapping(StyledPrimaryButton, props);
 const SecondaryButton = (props) =>
-  handleLinkWrapping(<StyledSecondaryButton />, props);
+  handleLinkWrapping(StyledSecondaryButton, props);
 const TertiaryButton = (props) =>
-  handleLinkWrapping(<StyledTertiaryButton />, props);
-const NavigationButton = (props) =>
+  handleLinkWrapping(StyledTertiaryButton, props);
+const NavigationButton = ({ children, ...props }) =>
   handleLinkWrapping(
     <StyledNavigationButton {...props}>
       <ArrowLeftIcon
         style={{ marginRight: 10 }}
-        color={props.variant}
-        size={14}
+        color={props.disabled ? "muted" : props.variant}
+        size={16}
       />
-      {props.children}
+      {children}
     </StyledNavigationButton>,
     props
   );
