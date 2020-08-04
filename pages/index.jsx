@@ -14,7 +14,7 @@ import {
 
 import { BodyTextComponent } from "../src/components/atoms/bodyText/bodyText.style";
 
-import { Grid } from "./index.style";
+import { Grid, Row } from "./index.style";
 
 const Index = () => {
   const [page, setPage] = useState(1);
@@ -35,12 +35,12 @@ const Index = () => {
           <Flex column>
             <Flex>
               <SecondaryButton onClick={() => setPage(page - 1)}>
-                voltar
-              </SecondaryButton>
-              <SecondaryButton onClick={() => setPage(page + 1)}>
-                avançar
+                Voltar
               </SecondaryButton>
               <ProgressBar current={page} count={4}></ProgressBar>
+              <SecondaryButton onClick={() => setPage(page + 1)}>
+                Avançar
+              </SecondaryButton>
             </Flex>
             <Flex>
               <Title size="h1">Título 1</Title>
@@ -82,30 +82,30 @@ const Index = () => {
           <Flex>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Flex>
         </Flex>
         <Grid>
-          <div>
-            <PrimaryButton>Entrar</PrimaryButton>
-            <PrimaryButton variant="secondary">Entrar</PrimaryButton>
-            <PrimaryButton variant="accent">Entrar</PrimaryButton>
+          <Row>
             <PrimaryButton disabled>Entrar</PrimaryButton>
-          </div>
-          <div>
-            <SecondaryButton>Entrar</SecondaryButton>
-            <SecondaryButton variant="secondary">Entrar</SecondaryButton>
-            <SecondaryButton variant="accent">Entrar</SecondaryButton>
             <SecondaryButton disabled>Entrar</SecondaryButton>
-          </div>
-          <div>
-            <TertiaryButton>Entrar</TertiaryButton>
-            <TertiaryButton variant="secondary">Entrar</TertiaryButton>
-            <TertiaryButton variant="accent">Entrar</TertiaryButton>
             <TertiaryButton disabled>Entrar</TertiaryButton>
-          </div>
-          <div>
-            <NavigationButton>Navegação</NavigationButton>
-            <NavigationButton variant="secondary">Navegação</NavigationButton>
-            <NavigationButton variant="accent">Navegação</NavigationButton>
             <NavigationButton disabled>Navegação</NavigationButton>
-          </div>
+          </Row>
+          <Row>
+            <PrimaryButton>Entrar</PrimaryButton>
+            <SecondaryButton>Entrar</SecondaryButton>
+            <TertiaryButton>Entrar</TertiaryButton>
+            <NavigationButton>Navegação</NavigationButton>
+          </Row>
+          <Row>
+            <PrimaryButton variant="secondary">Entrar</PrimaryButton>
+            <SecondaryButton variant="secondary">Entrar</SecondaryButton>
+            <TertiaryButton variant="secondary">Entrar</TertiaryButton>
+            <NavigationButton variant="secondary">Navegação</NavigationButton>
+          </Row>
+          <Row>
+            <PrimaryButton variant="accent">Entrar</PrimaryButton>
+            <SecondaryButton variant="accent">Entrar</SecondaryButton>
+            <TertiaryButton variant="accent">Entrar</TertiaryButton>
+            <NavigationButton variant="accent">Navegação</NavigationButton>
+          </Row>
         </Grid>
       </Modal>
     </Body>

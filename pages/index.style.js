@@ -1,9 +1,18 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Grid = styled.section`
-  display: grid;
-  grid-template-rows: 100px;
-  grid-template-columns: 1fr 1fr 2fr;
-  grid-row-gap:    20px;
-  grid-column-gap: 5rem;
-`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const Row = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+
+  & > * {
+    margin-top: 10px;
+  }
+`;
