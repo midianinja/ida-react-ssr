@@ -79,7 +79,9 @@ const Index = () => {
               </Flex>
             </Flex>
           </Flex>
-          <Flex>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Flex>
+          <Flex>
+            <Switch handleChange={(e) => console.log(e)} ></Switch>
+          </Flex>
         </Flex>
         <Grid>
           <Row>
