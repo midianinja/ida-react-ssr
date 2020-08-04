@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Body from '../src/components/template/body/Body';
 import Modal from '../src/components/organisms/modal/Modal';
 import Title from '../src/components/atoms/title/Title';
@@ -7,8 +7,11 @@ import Logo from '../src/components/atoms/logo/Logo';
 import ButtonSecondary from '../src/components/atoms/button/secondary/ButtonSecondary';
 import { BodyTextComponent } from '../src/components/atoms/bodyText/bodyText.style';
 import ButtonTertiary from '../src/components/atoms/button/tertiary/ButtonTertiary';
+import ProgressBar from '../src/components/molecules/progressBar/ProgressBar';
 
-export default () => (
+export default () => {
+  const [page, setPage] = useState(1);
+  return (
   <Body>
     <Modal
       header={(
@@ -18,6 +21,11 @@ export default () => (
       <Flex flex={0}>
         <Flex>
           <Flex column>
+            <Flex>
+            <ButtonSecondary onClick={() => setPage(page - 1)}>voltar</ButtonSecondary>
+            <ButtonSecondary onClick={() => setPage(page + 1)}>avançar</ButtonSecondary>
+              <ProgressBar current={page} count={4}></ProgressBar>
+            </Flex>
             <Flex>
               <Title size="h1">Título 1</Title>
             </Flex>
@@ -75,4 +83,5 @@ export default () => (
       </Flex>
     </Modal>
   </Body>
-);
+)
+};
