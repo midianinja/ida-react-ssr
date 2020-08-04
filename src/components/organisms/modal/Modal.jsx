@@ -1,6 +1,7 @@
 import { Overlay, ModalBox, ModalContainer, ModalHeader, ModalTitle, ModalExit } from "./modal.style.js";
+
 import Flex from "../../molecules/flex/Flex.jsx";
-import Icon from "../../atoms/icon/Icon.jsx";
+import { CloseIcon } from '../../atoms/icon'
 
 export default ({ header, children }) => {
   return (
@@ -15,7 +16,7 @@ export default ({ header, children }) => {
             </ModalTitle>
             <ModalExit>
               <Flex>
-                <Icon name="close" />
+                <CloseIcon color='secondary' />
               </Flex>
             </ModalExit>
           </ModalHeader>

@@ -1,11 +1,85 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ButtonComponent = styled.button` 
-  /*
-    background-color: ${({theme, type}) => theme.colors[type || "primary"]};
-    - Removido o parametro de por se tratar de um componte base 
-  */
-  border-radius: ${({theme}) => theme.default.borderRadius};
-  padding: ${({theme}) => theme.buttons.padding};
-  color: ${({theme}) => theme.colors.secondaryNormal};
+const BaseButton = styled.button`
+  border-radius: ${({ theme }) => theme.default.borderRadius};
+  color: ${({ theme, variant }) => theme.colors[variant]};
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 24px;
+  min-width: 88px;
+  cursor: pointer;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      cursor: not-allowed;
+    `}
+`;
+
+export const StyledPrimaryButton = styled(BaseButton)`
+  background-color: ${({ theme, variant }) => theme.colors[variant]};
+
+  ${({ variant }) =>
+    variant === "primary" &&
+    css`
+      color: ${({ theme }) => theme.colors.secondary};
+    `}
+
+  ${({ variant }) =>
+    variant === "secondary" &&
+    css`
+      color: ${({ theme }) => theme.colors.accent};
+    `}
+
+  ${({ variant }) =>
+    variant === "accent" &&
+    css`
+      color: ${({ theme }) => theme.colors.secondary};
+    `}
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.secondary};
+      background-color: ${({ theme }) => theme.colors.muted};
+    `}
+`;
+
+export const StyledSecondaryButton = styled(BaseButton)`
+  border: 2px solid;
+  background: transparent;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.muted};
+      border-color: ${({ theme }) => theme.colors.muted};
+    `}
+`;
+
+export const StyledTertiaryButton = styled(BaseButton)`
+  background: none;
+  text-decoration: underline;
+  font-size: 12px;
+  padding: 16px 24px;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.muted};
+    `}
+`;
+
+export const StyledNavigationButton = styled(BaseButton)`
+  background: none;
+  text-decoration: none;
+  padding: 12px 8px;
+  display: flex;
+  align-items: center;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${({ theme }) => theme.colors.muted};
+    `}
 `;
