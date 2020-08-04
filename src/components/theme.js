@@ -3,33 +3,40 @@ const theme = {
     mobile: [320, 360],
     desktop: [1024],
   },
-  default: {
-    fontFamily: ['Roboto', 'Arial', 'Helvetica', 'sans-serif'],
-    borderRadius: 10,
+  fonts: {
+    body: "Roboto, Helvetica, sans-serif",
+    title: "Darker Grotesque",
+    monospace: "Menlo, monospace",
+  },
+  default:{
+    borderRadius: '10px',
     spacing: {
       units: 0.5,
       metric: 'rem',
       value: () => `${theme.default.spacing.units}${theme.default.spacing.metric}`,
     },
+    logo: {
+      mono: "/assets/logo/idaLogoMono.svg",
+      color: {
+        url: "/assets/logo/idaLogoColor.svg",
+        width: 184,
+        height: 65,
+      },
+    },
   },
   colors: {
-    none: 'transparent',
-    bgPrimary: '#1d1d1d',
-    bgSecondary: '#FFF',
-    primary: '#6523CF',
-    secondaryNormal: '#FFF',
-    secondaryInverted: '#000',
-    inactive: '#AAA',
-    error: '#FF2626',
-    success: '#48F3A7',
-  },
-  buttons: {
-    padding: '10px 28px',
+    none: "transparent",
+    background: "#1D1D1D",
+    accent: "#1D1D1D",
+    primary: "#6523CF",
+    secondary: "#FFF",
+    muted: "#AAA",
+    error: "#FF2626",
+    success: "#48F3A7",
   },
   texts: {
     title: {
-      fontWeight: 'bold',
-      fontFamily: ['Darker Grotesque', 'Arial', 'Helvetica', 'sans-serif'],
+      fontWeight: "bold",
       sizes: {
         h1: 32,
         h2: 24,
@@ -37,9 +44,9 @@ const theme = {
       },
     },
     body: {
-      fontWeight: 'normal',
-      fontFamily: ['Roboto', 'Arial', 'Helvetica', 'sans-serif'],
-      sizes: {
+      fontWeight: "normal",
+      fontFamily: ["Roboto", "Arial", "Helvetica", "sans-serif"],
+      sizes:{
         h1: 18,
         h2: 16,
         h3: 14,
@@ -73,6 +80,6 @@ const theme = {
       ],
     },
   },
-};
+}
 
 export default theme;

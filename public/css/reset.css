@@ -5,7 +5,7 @@
 	outline: none;
 }
 
-html, body, header, main, nav, footer, article, blockquote, 
+html, body, header, main, nav, footer, article, blockquote,
 div, section, span, iframe, img, video, figure, a, p, h1, h2,
 h3, h4, h5, h6, strong, b, i, ul, ol, li, form, fieldset,
 label, input, input:focus, select, select:focus, textarea, textarea:focus, table, button, thead, tbody, tfoot,
@@ -27,6 +27,7 @@ input:focus, select:focus, textarea:focus{
 }
 
 body {
+	font-family: 'Roboto';
 	font-size: 14px;
 	line-height: 1em;
 	box-sizing: border-box;
