@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+
 import Body from "../src/components/template/body/Body";
 import Modal from "../src/components/organisms/modal/Modal";
 import Title from "../src/components/atoms/title/Title";
 import Flex from "../src/components/molecules/flex/Flex";
 import Logo from "../src/components/atoms/logo/Logo";
 import ProgressBar from "../src/components/molecules/progressBar/ProgressBar";
+import Switch from "../src/components/atoms/switch/Switch";
+import { PhoneIcon } from "../src/components/atoms/icon";
 import {
   PrimaryButton,
   SecondaryButton,
   TertiaryButton,
   NavigationButton,
+  IconButton,
 } from "../src/components/atoms/button/Button";
 
 import { BodyTextComponent } from "../src/components/atoms/bodyText/bodyText.style";
@@ -80,7 +84,7 @@ const Index = () => {
             </Flex>
           </Flex>
           <Flex>
-            <Switch handleChange={(e) => console.log(e)} ></Switch>
+            <Switch handleChange={(e) => console.log(e)}></Switch>
           </Flex>
         </Flex>
         <Grid>
@@ -102,11 +106,20 @@ const Index = () => {
             <TertiaryButton variant="secondary">Entrar</TertiaryButton>
             <NavigationButton variant="secondary">Navegação</NavigationButton>
           </Row>
-          <Row>
+          <Row style={{ background: "white" }}>
             <PrimaryButton variant="accent">Entrar</PrimaryButton>
             <SecondaryButton variant="accent">Entrar</SecondaryButton>
             <TertiaryButton variant="accent">Entrar</TertiaryButton>
             <NavigationButton variant="accent">Navegação</NavigationButton>
+          </Row>
+          <Row>
+            <IconButton disabled icon={<PhoneIcon size={24} />}>
+              SMS
+            </IconButton>
+            <IconButton icon={<PhoneIcon size={24} />}>SMS</IconButton>
+            <IconButton variant="secondary" icon={<PhoneIcon size={24} />}>
+              SMS
+            </IconButton>
           </Row>
         </Grid>
       </Modal>

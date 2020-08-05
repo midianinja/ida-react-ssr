@@ -83,3 +83,10 @@ export const StyledNavigationButton = styled(BaseButton)`
       color: ${({ theme }) => theme.colors.muted};
     `}
 `;
+
+export const StyledIconButton = styled(StyledSecondaryButton)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  `
