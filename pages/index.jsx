@@ -7,7 +7,8 @@ import Flex from "../src/components/molecules/flex/Flex";
 import Logo from "../src/components/atoms/logo/Logo";
 import ProgressBar from "../src/components/molecules/progressBar/ProgressBar";
 import Switch from "../src/components/atoms/switch/Switch";
-import { PhoneIcon } from "../src/components/atoms/icon";
+import { PhoneIcon, LogoIcon } from "../src/components/atoms/icon";
+import {PrimaryPartnerButton, SecondaryPartnerButton} from "../src/components/atoms/partner-button/PartnerButton";
 import {
   PrimaryButton,
   SecondaryButton,
@@ -121,7 +122,16 @@ const Index = () => {
               SMS
             </IconButton>
           </Row>
+          <Row style={{ background: "white" }}>
+            <PrimaryPartnerButton></PrimaryPartnerButton>
+            <SecondaryPartnerButton></SecondaryPartnerButton>
+          </Row>
+          <Row>
+            <PrimaryPartnerButton variant="secondary"></PrimaryPartnerButton>
+            <SecondaryPartnerButton variant="secondary"></SecondaryPartnerButton>
+          </Row>
         </Grid>
+
       </Modal>
     </Body>
   );

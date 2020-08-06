@@ -5,10 +5,11 @@ const BaseButton = styled.button`
   color: ${({ theme, variant }) => theme.colors[variant]};
   font-weight: 600;
   font-size: 16px;
-  padding: 12px 24px;
+  padding: ${({partner}) => partner ? '10px 16px' : '12px 24px'};
   min-width: 88px;
   cursor: pointer;
-
+  display: flex;
+  align-items: center;
   ${({ disabled }) =>
     disabled &&
     css`
