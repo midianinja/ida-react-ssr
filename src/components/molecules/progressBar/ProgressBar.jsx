@@ -7,7 +7,7 @@ export default ({count, current}) => {
         <ProgressArea>
             <Counter>{current} de {count}</Counter>
             <div>
-                {new Array(count).fill('').map((e,i) => <Ball done={(current - 1) >= i}></Ball>)}
+                {new Array(count).fill('').map((e,i) => <Ball key={i} done={(current - 1) >= i}></Ball>)}
             </div>
         </ProgressArea>
     )
