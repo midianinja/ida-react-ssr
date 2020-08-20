@@ -19,7 +19,7 @@ const InputLabel = styled.span`
     `
     background-color: #1D1D1D;
     padding: 0 7px;
-    transform: translate(-0.4rem, -1.45rem) scale(0.75);
+    transform: translate(-0.5rem, -1.45rem) scale(0.75);
   `}
 `;
 
