@@ -1,19 +1,23 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Label, Input } from "./input.style";
 
-const InputUser = (props) => {
+import { InputContainer, InputLabel, InputComponent } from "./input.style";
+
+const Input = (props) => {
+  const { label, disabled, onChange } = props;
+  const [active, setActive] = useState(false);
 
   return (
-    <div>
-      <Label>Name</Label>
-      <Input></Input>
-    </div>
+    <InputContainer>
+      <InputLabel active={active}>{label}</InputLabel>
+      <InputComponent
+        onFocus={() => setActive(true)}
+        onBlur={() => setActive(false)}
+      />
+    </InputContainer>
   );
 };
 
-InputUser.propTypes = {
-  Input: PropTypes.func.isRequired,
-};
+Input.propTypes = {};
 
-export default InputUser;
+export default Input;

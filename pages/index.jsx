@@ -7,7 +7,7 @@ import Flex from "../src/components/molecules/flex/Flex";
 import Logo from "../src/components/atoms/logo/Logo";
 import ProgressBar from "../src/components/molecules/progressBar/ProgressBar";
 import Switch from "../src/components/atoms/switch/Switch";
-import InputUser from "../src/components/atoms/input/Input";
+import Input from "../src/components/atoms/input/Input";
 import { PhoneIcon } from "../src/components/atoms/icon";
 import {
   PrimaryButton,
@@ -88,7 +88,7 @@ const Index = () => {
             <Switch handleChange={(e) => console.log(e)}></Switch>
           </Flex>
           <Flex>
-            <InputUser></InputUser>
+            <Input label="Texto" />
           </Flex>
         </Flex>
         <Grid>
