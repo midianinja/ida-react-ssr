@@ -1,5 +1,5 @@
 import React from "react";
-import { Ball, Counter, ProgressArea } from "./progressBar.style";
+import { Ball, Counter, Wrapper, ProgressArea } from "./progressBar.style";
 
 export default ({ count, current }) => {
   return (
@@ -7,11 +7,11 @@ export default ({ count, current }) => {
       <Counter>
         {current} de {count}
       </Counter>
-      <div>
+      <Wrapper>
         {new Array(count).fill("").map((e, i) => (
           <Ball done={current - 1 >= i}></Ball>
         ))}
-      </div>
+      </Wrapper>
     </ProgressArea>
   );
 };

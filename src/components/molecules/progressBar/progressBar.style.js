@@ -15,6 +15,10 @@ export const Ball = styled.span`
   }
 `;
 
+export const Wrapper = styled.div`
+  display: inline-flex;
+`
+
 export const Counter = styled.span`
   font-size: 0.8rem;
   margin-bottom: 0.3rem;
