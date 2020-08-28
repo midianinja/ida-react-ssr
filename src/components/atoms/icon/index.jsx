@@ -5,6 +5,9 @@ import ArrowLeft from "./arrow-left";
 import Close from "./close";
 import Phone from "./phone";
 import Email from "./email";
+import Eye from "./eye";
+import Error from "./error";
+import Success from "./success";
 
 const baseIcon = (Icon, { color = "primary", size = 24, ...rest }) => {
   const { colors } = useTheme();
@@ -18,13 +21,17 @@ const propTypes = {
   color: PropTypes.string,
 };
 
-const ArrowLeftIcon = (props) => baseIcon(ArrowLeft, props);
-const CloseIcon = (props) => baseIcon(Close, props);
-const PhoneIcon = (props) => baseIcon(Phone, props);
-const EmailIcon = (props) => baseIcon(Email, props);
+export const ArrowLeftIcon = (props) => baseIcon(ArrowLeft, props);
+export const CloseIcon = (props) => baseIcon(Close, props);
+export const PhoneIcon = (props) => baseIcon(Phone, props);
+export const EmailIcon = (props) => baseIcon(Email, props);
+export const EyeIcon = (props) => baseIcon(Eye, props);
+export const ErrorIcon = (props) => baseIcon(Error, props);
+export const SuccessIcon = (props) => baseIcon(Success, props);
 
 ArrowLeftIcon.propTypes = CloseIcon.propTypes = propTypes;
 PhoneIcon.propTypes = propTypes;
 EmailIcon.propTypes = propTypes;
-
-export { ArrowLeftIcon, CloseIcon, PhoneIcon, EmailIcon };
+EyeIcon.propTypes = propTypes;
+ErrorIcon.propTypes = propTypes;
+SuccessIcon.propTypes = propTypes;
