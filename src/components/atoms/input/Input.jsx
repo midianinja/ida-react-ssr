@@ -1,22 +1,31 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-import { InputContainer, InputLabel, InputComponent } from "./input.style";
+import { InputContainer, InputLabel, InputComponent, InputComplement } from "./input.style";
 
 const Input = (props) => {
-  const { label, disabled, onChange, value } = props;
+  const { label, disabled, onChange, error, value, endComplement } = props;
+
   const [active, setActive] = useState(false);
+  const [innerValue, setInnerValue] = useState(value || "");
 
   return (
-    <InputContainer>
-      <InputLabel active={!!value || active}>{label}</InputLabel>
+    <InputContainer disabled={disabled} error={error}>
+      <InputLabel active={innerValue || active}>{label}</InputLabel>
       <InputComponent
-        onChange={onChange}
+        onChange={(event) => {
+          setInnerValue(event.target.value);
+
+          if (onChange) {
+            onChange(event);
+          }
+        }}
         disabled={disabled}
-        value={value}
+        value={innerValue}
         onFocus={() => setActive(true)}
         onBlur={() => setActive(false)}
       />
+      {endComplement && <InputComplement>{endComplement}</InputComplement>}
     </InputContainer>
   );
 };

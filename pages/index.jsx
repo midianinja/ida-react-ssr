@@ -8,7 +8,7 @@ import Logo from "../src/components/atoms/logo/Logo";
 import ProgressBar from "../src/components/molecules/progressBar/ProgressBar";
 import Switch from "../src/components/atoms/switch/Switch";
 import Input from "../src/components/atoms/input/Input";
-import { PhoneIcon } from "../src/components/atoms/icon";
+import { PhoneIcon, EyeIcon } from "../src/components/atoms/icon";
 import {
   PrimaryButton,
   SecondaryButton,
@@ -89,6 +89,18 @@ const Index = () => {
           </Flex>
           <Flex>
             <Input label="Texto" />
+          </Flex>
+          <Flex>
+            <Input disabled label="Texto" />
+          </Flex>
+          <Flex>
+            <Input error label="Texto" />
+          </Flex>
+          <Flex>
+            <Input
+              label="Texto"
+              endComplement={<EyeIcon size={20} color="secondary" onClick={() => alert('teste')}/>}
+            />
           </Flex>
         </Flex>
         <Grid>

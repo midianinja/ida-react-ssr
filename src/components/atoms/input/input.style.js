@@ -1,18 +1,35 @@
 import styled from "styled-components";
 
-const InputContainer = styled.label`
+export const InputContainer = styled.label`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
   height: 48px;
-  border: 2px solid ${(props) => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.secondary};
+  border: 2px solid currentColor;
   border-radius: 10px;
-  padding: 14px 16px;
+  padding: 0 16px;
   font-size: 1rem;
+
+  ${(props) =>
+    props.disabled &&
+    `
+    color: ${props.theme.colors.muted};
+  `}
+
+  ${(props) =>
+    props.error &&
+    `
+    color: ${props.theme.colors.error};
+  `}
 `;
 
-const InputLabel = styled.span`
+export const InputLabel = styled.span`
   background-color: transparent;
   position: absolute;
   pointer-events: none;
-  color: ${(props) => props.theme.colors.secondary};
+  color: currentColor;
 
   ${(props) =>
     props.active &&
@@ -23,10 +40,15 @@ const InputLabel = styled.span`
   `}
 `;
 
-const InputComponent = styled.input`
-  color: ${(props) => props.theme.colors.secondary};
+export const InputComponent = styled.input`
+  color: currentColor;
   caret-color: ${(props) => props.theme.colors.secondary};
   background-color: transparent;
+  width: 100%;
 `;
 
-export { InputContainer, InputLabel, InputComponent };
+export const InputComplement = styled.span`
+  pointer-events: all;
+  max-height: 100%;
+  margin-left: 10px;
+`;
