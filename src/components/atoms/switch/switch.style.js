@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Label = styled.label`
-  border: 2px solid #6523cf;
+  border: 2px solid ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
   background-color: #1d1d1d;
   display: flex;
@@ -10,8 +10,9 @@ const Label = styled.label`
 `;
 
 const OptionEmail = styled.button`
-  background-color: ${({ active }) => (active ? "#6523CF" : "#1D1D1D")};
-  border: 0px solid #6523cf;
+  background-color: ${({ active, theme }) =>
+    active ? theme.colors.primary : theme.colors.background};
+  border: 0px solid ${({ theme }) => theme.colors.primary};
   border-radius: 7px;
   padding: 12px;
   font-size: 12px;
@@ -24,8 +25,9 @@ const OptionEmail = styled.button`
 `;
 
 const OptionCel = styled.button`
-  background-color: ${({ active }) => (active ? "#6523CF" : "#1D1D1D")};
-  border: 0px solid #6523cf;
+  background-color: ${({ active, theme }) =>
+    active ? theme.colors.primary : theme.colors.background};
+  border: 0px solid ${({ theme }) => theme.colors.primary};
   border-radius: 7px;
   padding: 12px;
   font-size: 12px;
