@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.label`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 240px;
   height: 48px;
   color: ${(props) => props.theme.colors.secondary};
-  border: 2px solid currentColor;
-  border-radius: 10px;
   padding: 0 16px;
   font-size: 1rem;
 
@@ -30,13 +29,14 @@ export const InputLabel = styled.span`
   position: absolute;
   pointer-events: none;
   color: currentColor;
+  will-change: transform;
+  left: 10px;
+  right: 0;
 
   ${(props) =>
     props.active &&
     `
-    background-color: #1D1D1D;
-    padding: 0 7px;
-    transform: translate(-0.5rem, -1.45rem) scale(0.75);
+    transform: translate(-1.4em, -1.55em) scale(0.75);
   `}
 `;
 
@@ -45,6 +45,45 @@ export const InputComponent = styled.input`
   caret-color: ${(props) => props.theme.colors.secondary};
   background-color: transparent;
   width: 100%;
+`;
+
+export const InputFieldset = styled.fieldset`
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  pointer-events: none;
+`;
+
+export const InputLegend = styled.legend`
+  width: auto;
+  height: 11px;
+  display: block;
+  padding: 0;
+  font-size: 0.75em;
+  max-width: 0.01px;
+  text-align: left;
+  transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  visibility: hidden;
+
+  ${(props) =>
+    props.active &&
+    `
+    max-width: 1000px;
+    transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms;
+  `}
+`;
+
+export const InputLegendSpan = styled.span`
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 7px;
 `;
 
 export const InputComplement = styled.span`

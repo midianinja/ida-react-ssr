@@ -88,13 +88,13 @@ const Index = () => {
             <Switch handleChange={(e) => console.log(e)}></Switch>
           </Flex>
           <Flex>
-            <Input label="Texto" />
+            <Input label="o que você está pensando?" />
           </Flex>
           <Flex>
             <Input disabled label="Texto" />
           </Flex>
           <Flex>
-            <Input error label="Texto" />
+            <Input error label="pense novamente" />
           </Flex>
           <Flex>
             <Input
